@@ -34,8 +34,7 @@ table {
   border-collapse: collapse;
   font-size: 1.1rem;
 }
-#reliquias table,
-#diario table {
+#reliquias table {
   max-width: unset;
 }
 
@@ -286,27 +285,69 @@ img {
   display: block;
 }
 
-#diario > a {
+#diario > article {
   width: 100%;
   text-align: center;
   height: fit-content;
   padding: 2px 0px 5px;
   display: inline-block;
 }
-#diario > a * {
+#diario > article * {
   font-weight: normal;
 }
-#diario a:nth-child(odd) {
+#diario article:nth-child(odd) {
   background: #ccc;
 }
-#diario a:nth-child(even) {
+#diario article:nth-child(even) {
   background: #eee;
 }
-#diario > a:hover * {
+#diario > article:hover > * {
   font-weight: bold;
 }
-#diario > a:hover {
+#diario > article:hover {
   cursor: pointer;
+}
+
+#diario section {
+  padding: 10px 15px;
+  text-align: justify;
+}
+
+#diario p {
+  margin: 10px 0;
+  line-height: 24px;
+}
+
+#diario p:not(:first-of-type) {
+  position: relative;
+}
+
+#diario p:not(:first-of-type)::after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 2px;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #777;
+}
+
+#diario h1 {
+  margin: 0px 15px;
+}
+
+#diario .strong {
+  font-weight: bold;
+}
+
+#diario p::first-letter {
+  margin-left: 21px;
+}
+
+#diario .pensamento {
+  font-style: italic;
+  color: #00f;
 }
 
 @media (max-width: 450px) {
@@ -345,4 +386,7 @@ img {
   main > nav > a {
     border: none;
   }
+}
+
+#diario h1 {
 }
