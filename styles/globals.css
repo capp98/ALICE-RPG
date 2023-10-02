@@ -327,6 +327,7 @@ img {
 
   #inventario-reliquias {
     font-size: 0.8rem;
+    margin-bottom: 50px;
   }
   #inventario-reliquias td {
     padding: 2px;
