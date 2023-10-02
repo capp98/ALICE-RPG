@@ -336,8 +336,7 @@ img {
     border-top: 5px double black;
   }
   #inventario-reliquias tr td:first-of-type {
-    width: 25%;
-    min-width: 100px;
+    max-width: 300px;
   }
 }
 @media (max-width: 375px) {
