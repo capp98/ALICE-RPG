@@ -10,20 +10,14 @@
 
 #inventario-reliquias {
   max-width: unset;
-  background: transparent;
-}
-#inventario-reliquias td p {
-  padding: 20px 0px;
 }
 #inventario-reliquias td p:not(:first-of-type) {
   border-top: 5px double black;
 }
+
 #inventario-reliquias tr td:first-of-type {
   width: 25%;
   min-width: 250px;
-}
-#inventario-reliquias img {
-  min-width: 50%;
 }
 
 #__next {
@@ -329,6 +323,20 @@ img {
   }
   main > nav > a {
     font-size: 0.9rem;
+  }
+
+  #inventario-reliquias {
+    font-size: 0.8rem;
+  }
+  #inventario-reliquias td {
+    padding: 2px;
+  }
+  #inventario-reliquias td p:not(:first-of-type) {
+    border-top: 5px double black;
+  }
+  #inventario-reliquias tr td:first-of-type {
+    width: 25%;
+    min-width: 100px;
   }
 }
 @media (max-width: 375px) {
