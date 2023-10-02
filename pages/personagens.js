@@ -79,7 +79,7 @@ export default function Home() {
 
             {visible === 'reliquias' && <Reliquias ficha={ficha} />}
 
-            {visible === 'diario' && <Diario ficha={ficha} />}
+            {visible === 'diario' && <Diario personagem_id={ficha.id} />}
           </div>
         </div>
       )}
