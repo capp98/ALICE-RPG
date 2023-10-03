@@ -358,7 +358,8 @@ img {
 
   #inventario-reliquias,
   #reliquias table:last-of-type,
-  #atributos table:last-of-type {
+  #atributos table:last-of-type,
+  #diario article:last-of-type {
     margin-bottom: 50px;
   }
 }
