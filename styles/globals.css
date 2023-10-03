@@ -350,13 +350,21 @@ img {
   color: #00f;
 }
 
+@media (max-width: 618px) {
+  #imagem * {
+    max-width: unset;
+    width: 100%;
+  }
+
+  #inventario-reliquias,
+  #reliquias table:last-of-type,
+  #atributos table:last-of-type {
+    margin-bottom: 50px;
+  }
+}
 @media (max-width: 450px) {
   * {
     border-radius: 0px !important;
-  }
-  .ficha {
-    padding: 15px 0px;
-    height: auto;
   }
   main > nav {
     gap: 0 0.2rem;
@@ -367,7 +375,6 @@ img {
 
   #inventario-reliquias {
     font-size: 0.8rem;
-    margin-bottom: 50px;
   }
   #inventario-reliquias td {
     padding: 2px;
@@ -386,7 +393,4 @@ img {
   main > nav > a {
     border: none;
   }
-}
-
-#diario h1 {
 }
