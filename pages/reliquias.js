@@ -12,8 +12,8 @@ export default function Reliquias() {
         setIsLoading(false);
       });
   }, []);
-  if (isLoading) return <h1>Carregando</h1>;
 
+  if (isLoading) return <h1>Carregando</h1>;
   return (
     <table id="inventario-reliquias">
       <thead>
@@ -25,48 +25,29 @@ export default function Reliquias() {
         </tr>
       </thead>
       <tbody>
-        {reliquias.map((item, index) =>
-          item.categoria.split(';').map((efeito, efeitoIndex) => (
-            <tr key={index + '-' + efeitoIndex}>
-              {efeitoIndex === 0 ? (
+        {reliquias.map((reliquia, index) =>
+          reliquia.tag.map((tag, tagIndex) => (
+            <tr key={index + '-' + tagIndex}>
+              {tagIndex === 0 ? (
                 <>
-                  <td rowSpan={item.categoria.split(';').length}>
+                  <td rowSpan={reliquia.tag.length}>
                     <img
-                      src={`/static/images/reliquias/${item.nome.toLowerCase()}.jpg`}
-                      alt={item.nome}
+                      src={`/static/images/reliquias/${reliquia.nome.toLowerCase()}.jpg`}
+                      alt={reliquia.nome}
                     />
                   </td>
-                  <td rowSpan={item.categoria.split(';').length}>
-                    {item.nome}
-                  </td>
+                  <td rowSpan={reliquia.tag.length}>{reliquia.nome}</td>
                 </>
               ) : null}
-              <td>{efeito}</td>
-              <td>{item.descricao.split(';')[efeitoIndex]}</td>
+              <td>{tag}</td>
+              <td>
+                {!!reliquia.tag_descricao
+                  ? reliquia.tag_descricao[tagIndex]
+                  : ''}
+              </td>
             </tr>
           ))
         )}
-        {/* {reliquias.map((reliquia, r) => (
-          <tr key={r}>
-            <td>
-              <img
-                src={`/static/images/reliquias/${reliquia.nome.toLowerCase()}.jpg`}
-                alt={reliquia.nome}
-              />
-            </td>
-            <td>{reliquia.nome}</td>
-            <td>
-              {reliquia.categoria.split(';').map((tag, t) => (
-                <p key={t}>{tag}</p>
-              ))}
-            </td>
-            <td>
-              {reliquia.descricao.split(';').map((desc, d) => (
-                <p key={d}>{desc}</p>
-              ))}
-            </td>
-          </tr>
-        ))} */}
       </tbody>
     </table>
   );
