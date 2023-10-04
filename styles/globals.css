@@ -276,6 +276,21 @@ img {
 #reliquias > * {
   flex: 1 1 300px;
 }
+#reliquias p {
+  position: relative;
+  margin: 5px 0;
+  line-height: 24px;
+}
+#reliquias p:not(:first-of-type)::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  top: -2.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #777;
+}
 
 .visible {
   display: flex;
