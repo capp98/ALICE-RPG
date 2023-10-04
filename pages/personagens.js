@@ -77,7 +77,7 @@ export default function Home() {
               <Atributos ficha={ficha} valoresExtras={valoresTotal} />
             )}
 
-            {visible === 'reliquias' && <Reliquias ficha={ficha} />}
+            {visible === 'reliquias' && <Reliquias personagem_id={ficha.id} />}
 
             {visible === 'diario' && <Diario personagem_id={ficha.id} />}
           </div>
