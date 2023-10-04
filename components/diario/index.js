@@ -9,11 +9,21 @@ export default function Diario({ personagem_id }) {
       .then((response) => response.json())
       .then((data) => {
         setDiarios(data);
-        setIsLoading(false);
-      });
-  }, []);
+      })
+      .catch((err) => setDiarios(''))
+      .then(() => setIsLoading(false));
+  }, [personagem_id]);
 
-  if (isLoading) return <h1>Carregando...</h1>;
+  if (isLoading)
+    return (
+      <h1 style={{ textAlign: 'center', marginTop: '50px' }}>Carregando...</h1>
+    );
+  if (diarios === '')
+    return (
+      <h1 style={{ textAlign: 'center', marginTop: '50px' }}>
+        Você ainda não escreveu nada 😔
+      </h1>
+    );
 
   return (
     <div className="infos-window" id="diario">
