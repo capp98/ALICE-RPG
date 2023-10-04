@@ -11,18 +11,20 @@ export default function Reliquias({ personagem_id }) {
         setReliquias(data);
         setIsLoading(false);
       });
-  }, []);
+  }, [personagem_id]);
 
-  if (isLoading) return <h1>Buscando Relíquias</h1>;
+  if (isLoading)
+    return (
+      <h1 style={{ textAlign: 'center', marginTop: '50px' }}>
+        Buscando Relíquias
+      </h1>
+    );
 
   let reliquiasComPoderes = reliquias.filter((reliquia) => !!reliquia.poder);
 
-  console.log(reliquiasComPoderes);
   let reliquiasComAtributos = reliquias.filter(
     (reliquia) => !!reliquia.atributos
   );
-
-  console.log(reliquiasComAtributos);
 
   return (
     <div className="infos-window" id="reliquias">
