@@ -64,39 +64,24 @@ export default function Reliquias({ personagem_id }) {
           </tr>
         </thead>
         <tbody id="table-itens">
-          {reliquiasComAtributos.map((reliquia, reliquiaIndex) =>
+          {reliquiasComAtributos.map((reliquia, i) =>
             Object.entries(reliquia.atributos).map(
               ([atributo, valor], atIndex) => (
-                <tr key={reliquiaIndex + '-' + atIndex}>
+                <tr key={i + '-' + atIndex}>
                   {atIndex === 0 ? (
-                    !!reliquia.atributos.passivo ? (
-                      <td
-                        rowSpan={
-                          Object.entries(reliquia.atributos).length +
-                          Array.from(reliquia.atributos.passivo).length -
-                          1
-                        }
-                      >
-                        {Object.entries(reliquia.atributos).length +
-                          Array.from(reliquia.atributos.passivo).length -
-                          1}
-                      </td>
-                    ) : (
-                      <td rowSpan={Object.entries(reliquia.atributos).length}>
-                        {reliquia.nome}
-                      </td>
-                    )
-                  ) : null}
-                  {valor.length > 0 ? (
-                    valor.map((v, vIndex) => (
-                      <td key={reliquiaIndex + '-' + atIndex}>{v}</td>
-                    ))
-                  ) : (
-                    <td key={reliquiaIndex + '-' + atIndex}>
-                      <strong>{atributo}:</strong>
-                      {valor}
+                    <td rowSpan={Object.entries(reliquia.atributos).length}>
+                      {reliquia.nome}
                     </td>
-                  )}
+                  ) : null}
+                  <td>
+                    {valor.length > 0 ? (
+                      valor.map((v, i) => <p key={i}>{v}</p>)
+                    ) : (
+                      <p key={atributo}>
+                        <strong>{atributo}:</strong> {valor}
+                      </p>
+                    )}
+                  </td>
                 </tr>
               )
             )
