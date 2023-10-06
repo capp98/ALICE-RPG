@@ -64,22 +64,43 @@ export default function Reliquias({ personagem_id }) {
           </tr>
         </thead>
         <tbody id="table-itens">
-          {reliquiasComAtributos.map((reliquia, i) => (
-            <tr key={i}>
-              <td>{reliquia.nome}</td>
-              <td>
-                {Object.entries(reliquia.atributos).map(([atributo, valor]) =>
-                  valor.length > 0 ? (
-                    valor.map((v, i) => <p key={i}>{v}</p>)
+          {reliquiasComAtributos.map((reliquia, reliquiaIndex) =>
+            Object.entries(reliquia.atributos).map(
+              ([atributo, valor], atIndex) => (
+                <tr key={reliquiaIndex + '-' + atIndex}>
+                  {atIndex === 0 ? (
+                    !!reliquia.atributos.passivo ? (
+                      <td
+                        rowSpan={
+                          Object.entries(reliquia.atributos).length +
+                          Array.from(reliquia.atributos.passivo).length -
+                          1
+                        }
+                      >
+                        {Object.entries(reliquia.atributos).length +
+                          Array.from(reliquia.atributos.passivo).length -
+                          1}
+                      </td>
+                    ) : (
+                      <td rowSpan={Object.entries(reliquia.atributos).length}>
+                        {reliquia.nome}
+                      </td>
+                    )
+                  ) : null}
+                  {valor.length > 0 ? (
+                    valor.map((v, vIndex) => (
+                      <td key={reliquiaIndex + '-' + atIndex}>{v}</td>
+                    ))
                   ) : (
-                    <p key={atributo}>
-                      <strong>{atributo}:</strong> {valor}
-                    </p>
-                  )
-                )}
-              </td>
-            </tr>
-          ))}
+                    <td key={reliquiaIndex + '-' + atIndex}>
+                      <strong>{atributo}:</strong>
+                      {valor}
+                    </td>
+                  )}
+                </tr>
+              )
+            )
+          )}
         </tbody>
       </table>
     </div>
