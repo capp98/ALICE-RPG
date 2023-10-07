@@ -284,12 +284,19 @@ img {
 #reliquias p:not(:first-of-type)::after {
   content: '';
   position: absolute;
-  width: 10px;
-  height: 2px;
-  top: -2.5px;
+  width: calc(100% + 12px);
+  height: 1px;
+  top: -1px;
   left: 50%;
   transform: translateX(-50%);
-  background: #777;
+  background: #000;
+}
+
+#reliquias td > p:first-of-type {
+  margin: 0px 0px 5px;
+}
+#reliquias td > p:last-of-type {
+  margin: 5px 0px 0px;
 }
 
 .visible {
