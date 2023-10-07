@@ -73,15 +73,17 @@ export default function Reliquias({ personagem_id }) {
                       {reliquia.nome}
                     </td>
                   ) : null}
-                  <td>
-                    {valor.length > 0 ? (
-                      valor.map((v, i) => <p key={i}>{v}</p>)
-                    ) : (
-                      <p key={atributo}>
-                        <strong>{atributo}:</strong> {valor}
-                      </p>
-                    )}
-                  </td>
+                  {valor.length > 0 ? (
+                    <td>
+                      {valor.map((v, i) => (
+                        <p key={i}>{v}</p>
+                      ))}
+                    </td>
+                  ) : (
+                    <td key={atributo}>
+                      <strong>{atributo}:</strong> {valor}
+                    </td>
+                  )}
                 </tr>
               )
             )
