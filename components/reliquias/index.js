@@ -40,7 +40,20 @@ export default function Reliquias({ personagem_id }) {
           </tr>
         </thead>
         <tbody id="table-reliquias">
-          {reliquiasComPoderes.map((item, index) =>
+          {reliquiasComPoderes.map((item, index) => (
+            <>
+              <tr className="reliquiaNome">
+                <td colSpan="3">{item.nome}</td>
+              </tr>
+              {item.poder.map((poder, poderIndex) => (
+                <tr key={poderIndex}>
+                  <td colSpan="2">{poder.descrição}</td>
+                  <td>{poder.dados}</td>
+                </tr>
+              ))}
+            </>
+          ))}
+          {/* {reliquiasComPoderes.map((item, index) =>
             item.poder.map((poder, poderIndex) => (
               <tr key={index + '-' + poderIndex}>
                 {poderIndex === 0 ? (
@@ -50,7 +63,7 @@ export default function Reliquias({ personagem_id }) {
                 <td>{poder.dados}</td>
               </tr>
             ))
-          )}
+          )} */}
         </tbody>
       </table>
       <table>
