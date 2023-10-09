@@ -8,6 +8,10 @@
   list-style: none;
 }
 
+.reliquiaNome {
+  border-top: 10px solid #333;
+}
+
 #inventario-reliquias {
   max-width: unset;
 }
