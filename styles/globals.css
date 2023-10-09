@@ -8,8 +8,10 @@
   list-style: none;
 }
 
-.reliquiaNome {
-  border-top: 10px solid #333;
+#reliquias .reliquiaNome td {
+  border-top: 10px solid #222;
+  background: #000;
+  color: #fff;
 }
 
 #inventario-reliquias {
@@ -234,6 +236,10 @@ img {
   height: calc(100% - 27.38px);
   justify-content: space-evenly;
   overflow-y: auto;
+}
+
+.infos-window td {
+  padding: 15px;
 }
 
 #atributos table:first-of-type .forca > * {

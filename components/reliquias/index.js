@@ -29,16 +29,6 @@ export default function Reliquias({ personagem_id }) {
   return (
     <div className="infos-window" id="reliquias">
       <table>
-        <thead>
-          <tr>
-            <th colSpan="3">Relíquias</th>
-          </tr>
-          <tr>
-            <th>Item</th>
-            <th>Descrição</th>
-            <th>Poder</th>
-          </tr>
-        </thead>
         <tbody id="table-reliquias">
           {reliquiasComPoderes.map((item, index) => (
             <>
@@ -53,31 +43,43 @@ export default function Reliquias({ personagem_id }) {
               ))}
             </>
           ))}
-          {/* {reliquiasComPoderes.map((item, index) =>
-            item.poder.map((poder, poderIndex) => (
-              <tr key={index + '-' + poderIndex}>
-                {poderIndex === 0 ? (
-                  <td rowSpan={item.poder.length}>{item.nome}</td>
-                ) : null}
-                <td>{poder.descrição}</td>
-                <td>{poder.dados}</td>
-              </tr>
-            ))
-          )} */}
         </tbody>
       </table>
       <table>
         <thead>
           <tr>
-            <th colSpan="2">Itens</th>
-          </tr>
-          <tr>
-            <th>Item</th>
-            <th>Buff</th>
+            <th>Itens</th>
           </tr>
         </thead>
         <tbody id="table-itens">
-          {reliquiasComAtributos.map((reliquia, i) =>
+          {reliquiasComAtributos.map((item, index) => (
+            <>
+              <tr className="reliquiaNome">
+                <td>{item.nome}</td>
+              </tr>
+              {Object.entries(item.atributos).map(
+                ([atributo, valor], atIndex) =>
+                  valor.length > 0 ? (
+                    valor.map((v, i) => (
+                      <tr>
+                        <td key={i}>{v}</td>
+                      </tr>
+                    ))
+                  ) : (
+                    <tr key={atributo}>
+                      <td>
+                        <strong>{atributo}:</strong> {valor}
+                      </td>
+                    </tr>
+                  )
+                // <tr key={poderIndex}>
+                //   <td colSpan="2">{poder.descrição}</td>
+                //   <td>{poder.dados}</td>
+                // </tr>
+              )}
+            </>
+          ))}
+          {/* {reliquiasComAtributos.map((reliquia, i) =>
             Object.entries(reliquia.atributos).map(
               ([atributo, valor], atIndex) => (
                 <tr key={i + '-' + atIndex}>
@@ -100,7 +102,7 @@ export default function Reliquias({ personagem_id }) {
                 </tr>
               )
             )
-          )}
+          )} */}
         </tbody>
       </table>
     </div>
