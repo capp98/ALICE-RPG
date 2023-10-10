@@ -8,6 +8,18 @@
   list-style: none;
 }
 
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: black;
+  height: 100vh;
+
+  background: 100% center no-repeat url('/static/images/fundo.jpg');
+  background-size: cover;
+
+  overflow-y: hidden;
+}
+
 #reliquias .reliquiaNome td {
   border-top: 10px solid #222;
   background: #000;
@@ -38,7 +50,7 @@ table {
   box-shadow: 5px 5px 15px 1px #000;
   font-weight: bold;
   border-collapse: collapse;
-  font-size: 1.1rem;
+  font-size: 1.1em;
 }
 #reliquias table {
   max-width: unset;
@@ -68,7 +80,7 @@ table > thead > tr > th {
 }
 
 #nome {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   background: #000;
   box-shadow: inset 0px 0px 0px 4px white;
 }
@@ -81,18 +93,6 @@ td {
   text-align: center;
   color: #000;
   border: 1px solid black;
-}
-
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  color: black;
-  height: 100vh;
-
-  background: 100% center no-repeat url('/static/images/fundo.jpg');
-  background-size: cover;
-
-  overflow-y: hidden;
 }
 
 header > nav {
@@ -115,7 +115,7 @@ main > nav,
 }
 
 :root {
-  --h-nav-size: 1.1rem;
+  --h-nav-size: 1.1em;
   --h-nav-pad: 0.5rem;
 }
 
@@ -139,6 +139,7 @@ main > nav > a {
   text-align: center;
   text-decoration: none;
   color: #fff;
+  font-size: 0.8em;
 }
 
 nav a:hover,
@@ -155,7 +156,7 @@ nav a[aria-current='page'] {
 
 h1 {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.5em;
 }
 
 main {
@@ -222,7 +223,7 @@ img {
 }
 #infos nav ul li {
   padding: 0.2rem;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   font-weight: bold;
   width: 100%;
   text-align: center;
@@ -382,7 +383,43 @@ img {
   color: #00f;
 }
 
+#logs {
+  margin-top: 20px;
+  font-size: 1em;
+}
+
+#logs table {
+  margin: 0px auto;
+  max-width: 500px;
+}
+
+#logs > table:first-of-type {
+  margin-bottom: 20px;
+}
+
+#logs td {
+  padding: 10px 40px;
+}
+#logs ul li {
+  font-weight: normal;
+  list-style: initial;
+  padding: 5px unset;
+}
+#logs td {
+  font-weight: normal;
+}
+#logs tbody th {
+  color: #000;
+  padding: 10px;
+}
+
 @media (max-width: 618px) {
+  #logs table {
+    max-width: 90%;
+  }
+  .infos-window td {
+    padding: 5px;
+  }
   #imagem * {
     max-width: unset;
     width: 100%;
@@ -396,14 +433,14 @@ img {
   }
 }
 @media (max-width: 450px) {
+  body {
+    font-size: 12px;
+  }
   * {
     border-radius: 0px !important;
   }
   main > nav {
     gap: 0 0.2rem;
-  }
-  main > nav > a {
-    font-size: 0.9rem;
   }
 
   #inventario-reliquias {
