@@ -8,6 +8,7 @@ export default function Layout({ children }) {
           <Link href="/personagens">Personagens</Link>
           <Link href="/reliquias">Relíquias</Link>
           <Link href="/status">Status</Link>
+          <Link href="/">Atualizações</Link>
         </nav>
       </header>
       <main>{children}</main>
