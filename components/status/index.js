@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function Status({ nome, ficha, valoresExtras }) {
   let { atributos } = ficha;
@@ -8,8 +8,10 @@ export default function Status({ nome, ficha, valoresExtras }) {
   let vidaEmPorcentagem =
     1.0 + (valoresExtras['% de vida'] ? valoresExtras['% de vida'] / 100 : 0);
 
-  let hpMaximo =
-    (40 + atributos.constituição * 2 + valoresExtras.vida) * vidaEmPorcentagem;
+  let hpMaximo = Math.floor(
+    (ficha.hpinicial + atributos.constituição * 2 + valoresExtras.vida) *
+      vidaEmPorcentagem
+  );
 
   //SANIDADE
   let sanidadeMaxima = valoresExtras.sanidade
