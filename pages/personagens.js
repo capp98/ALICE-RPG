@@ -11,6 +11,7 @@ export default function Home() {
   let nome = router.query.nome || '';
 
   const [personagem, setPersonagem] = useState(nome);
+  const [reliquias, setReliquias] = useState();
   const [ficha, setFicha] = useState();
   const [visible, setVisible] = useState('atributos');
   const [isLoading, setIsLoading] = useState(true);
@@ -28,10 +29,20 @@ export default function Home() {
 
   let valoresTotal = {};
 
-  if (!isLoading) {
-    ficha.reliquias.sort(ordenarNome);
+  useEffect(() => {
+    if (!!ficha) {
+      fetch(`https://anxious-puce-cloak.cyclic.cloud/reliquias/${ficha.id}`)
+        .then((response) => response.json())
+        .then((data) => {
+          setReliquias(data);
+        });
+    }
+  }, [ficha]);
 
-    ficha.reliquias.forEach(({ atributos }) => {
+  if (!isLoading && !!reliquias) {
+    reliquias.sort(ordenarNome);
+
+    reliquias.forEach(({ atributos }) => {
       if (!atributos) return;
       let values = Object.keys(atributos);
       values.forEach((field) => {
@@ -41,6 +52,8 @@ export default function Home() {
       });
     });
   }
+
+  if (!valoresTotal) return <h1>Carregando...</h1>;
 
   return (
     <>
@@ -52,7 +65,7 @@ export default function Home() {
         <a onClick={() => setPersonagem('Zophise Monchèrt')}>Zophise</a>
         <a onClick={() => setPersonagem("Zenith Beifong D'weller")}>Zenith</a>
       </nav>
-      {isLoading ? (
+      {isLoading && personagem !== '' ? (
         <h1>Carregando...</h1>
       ) : personagem === '' ? (
         <h1 style={{ textAlign: 'center', marginTop: '50px' }}>
