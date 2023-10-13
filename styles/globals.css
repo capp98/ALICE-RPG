@@ -112,7 +112,7 @@ footer {
 }
 
 main {
-  height: calc(100% - ((2.9 * var(--h-nav-pad) + var(--h-nav-size)) + 5px));
+  height: calc(100% - (2.9 * var(--h-nav-pad) + var(--h-nav-size) + 3px));
 }
 
 header > nav {
@@ -254,10 +254,6 @@ img {
   height: calc(100% - 27.38px);
   justify-content: space-evenly;
   overflow-y: auto;
-}
-
-.infos-window td {
-  padding: 15px;
 }
 
 #atributos table:first-of-type .forca > * {
