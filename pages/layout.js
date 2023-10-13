@@ -12,11 +12,6 @@ export default function Layout({ children }) {
         </nav>
       </header>
       <main>{children}</main>
-      <footer>
-        <p>
-          Desenvolvido por <a href="https://github.com/capp98">Capp98</a>
-        </p>
-      </footer>
     </>
   );
 }
