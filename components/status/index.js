@@ -30,7 +30,7 @@ export default function Status({ nome, ficha, valoresExtras }) {
   let armadura = armaduraExtra + defesaExtra;
   let resistenciaMagica = resistenciaMagicaExtra + defesaExtra;
   return (
-    <div id="imagem">
+    <div id="resumoFicha">
       <img
         id="foto"
         src={`/static/images/${ficha.nome.split(' ')[0]}.png`}
