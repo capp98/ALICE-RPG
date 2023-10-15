@@ -201,7 +201,7 @@ main {
   flex: 3 1 300px;
 }
 
-#imagem {
+#resumoFicha {
   text-align: center;
 }
 img {
@@ -450,7 +450,7 @@ img {
   .infos-window td {
     padding: 5px;
   }
-  #imagem * {
+  #resumoFicha * {
     max-width: unset;
   }
 
