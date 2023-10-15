@@ -438,12 +438,14 @@ img {
 }
 
 #imagem img {
-  width: 100%;
-  max-width: 50%;
-  margin: auto auto;
+  max-width: 400px;
+  margin: 0px auto;
 }
 
 @media (max-width: 618px) {
+  #imagem img {
+    max-width: 300px;
+  }
   #logs table {
     max-width: 90%;
   }
