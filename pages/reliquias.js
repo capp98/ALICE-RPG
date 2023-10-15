@@ -8,12 +8,13 @@ export default function Reliquias() {
     fetch(`https://anxious-puce-cloak.cyclic.cloud/reliquias`)
       .then((response) => response.json())
       .then((data) => {
-        setReliquias(data);
+        setReliquias(data.filter((reliquia) => !!reliquia.tag));
         setIsLoading(false);
       });
   }, []);
 
   if (isLoading) return <h1>Carregando</h1>;
+
   return (
     <table id="inventario-reliquias">
       <thead>
