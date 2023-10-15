@@ -372,8 +372,8 @@ img {
   content: '';
   position: absolute;
   width: 30%;
-  height: 2px;
-  top: -5px;
+  height: 1px;
+  top: -3px;
   left: 50%;
   transform: translateX(-50%);
   background: #777;
