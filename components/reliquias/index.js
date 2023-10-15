@@ -45,7 +45,7 @@ export default function Reliquias({ personagem_id }) {
           ))}
         </tbody>
       </table>
-      <table>
+      {/* <table>
         <thead>
           <tr>
             <th>Itens</th>
@@ -72,39 +72,11 @@ export default function Reliquias({ personagem_id }) {
                       </td>
                     </tr>
                   )
-                // <tr key={poderIndex}>
-                //   <td colSpan="2">{poder.descrição}</td>
-                //   <td>{poder.dados}</td>
-                // </tr>
               )}
             </>
           ))}
-          {/* {reliquiasComAtributos.map((reliquia, i) =>
-            Object.entries(reliquia.atributos).map(
-              ([atributo, valor], atIndex) => (
-                <tr key={i + '-' + atIndex}>
-                  {atIndex === 0 ? (
-                    <td rowSpan={Object.entries(reliquia.atributos).length}>
-                      {reliquia.nome}
-                    </td>
-                  ) : null}
-                  {valor.length > 0 ? (
-                    <td>
-                      {valor.map((v, i) => (
-                        <p key={i}>{v}</p>
-                      ))}
-                    </td>
-                  ) : (
-                    <td key={atributo}>
-                      <strong>{atributo}:</strong> {valor}
-                    </td>
-                  )}
-                </tr>
-              )
-            )
-          )} */}
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 }
