@@ -5,6 +5,7 @@ import ordenarNome from '../utils/sort';
 import Atributos from '../components/atributos';
 import Reliquias from '../components/reliquias';
 import Diario from '../components/diario';
+import Itens from '../components/itens';
 
 export default function Home() {
   const router = useRouter();
@@ -60,7 +61,11 @@ export default function Home() {
       <nav>
         <a onClick={() => setPersonagem('Lukas Hysi')}>Lukas</a>
         <a onClick={() => setPersonagem('Nicole Freitas')}>Nicole</a>
-        <a onClick={() => setPersonagem('Rafael DeWitt')}>Rafael</a>
+        {personagem === 'Rafael DeWitt' ? (
+          <a onClick={() => setPersonagem('Kael')}>Kael</a>
+        ) : (
+          <a onClick={() => setPersonagem('Rafael DeWitt')}>Rafael</a>
+        )}
         <a onClick={() => setPersonagem('Violet Müller Bohn')}>Violet</a>
         <a onClick={() => setPersonagem('Zophise Monchèrt')}>Zophise</a>
         <a onClick={() => setPersonagem("Zenith Beifong D'weller")}>Zenith</a>
@@ -83,6 +88,7 @@ export default function Home() {
               <ul>
                 <li onClick={() => setVisible('atributos')}>Atributos</li>
                 <li onClick={() => setVisible('reliquias')}>Relíquias</li>
+                <li onClick={() => setVisible('itens')}>Itens</li>
                 <li onClick={() => setVisible('diario')}>Diário</li>
               </ul>
             </nav>
@@ -91,6 +97,8 @@ export default function Home() {
             )}
 
             {visible === 'reliquias' && <Reliquias personagem_id={ficha.id} />}
+
+            {visible === 'itens' && <Itens personagem_id={ficha.id} />}
 
             {visible === 'diario' && <Diario personagem_id={ficha.id} />}
           </div>
