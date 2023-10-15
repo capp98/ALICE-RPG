@@ -9,6 +9,22 @@ export default function Home() {
         </thead>
         <tbody>
           <tr>
+            <th>15/10/2023</th>
+            <td>
+              <ul>
+                <li>Novo registro no diário do Zenith</li>
+                <li>
+                  Itens e suas passivas estão em uma nova aba da ficha chamada{' '}
+                  <b>Itens</b> (Dãr)
+                </li>
+                <li>
+                  Na aba <b>Relíquia</b> é possível expandir a imagem da
+                  relíquia clicando/tocando na imagem dela :)
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
             <th>09/10/2023</th>
             <td>
               Versão <b>1.3</b> lançada
