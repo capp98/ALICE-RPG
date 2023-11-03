@@ -8,6 +8,12 @@ export default function Home() {
           </tr>
         </thead>
         <tbody>
+        <tr>
+            <th>20/10/2023</th>
+            <td>
+              Fim 😉
+            </td>
+          </tr>
           <tr>
             <th>15/10/2023</th>
             <td>
