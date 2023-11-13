@@ -5,7 +5,7 @@ export default function Layout({ children }) {
     <>
       <header>
         <nav>
-          <Link href="/">1.3</Link>
+          <Link href="/">Fim</Link>
           <Link href="/personagens">Personagens</Link>
           <Link href="/reliquias">Relíquias</Link>
           <Link href="/status">Status</Link>
