@@ -19,7 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     fetch(
-      `https://anxious-puce-cloak.cyclic.cloud/chars/${personagem.toLowerCase()}`
+      `https://giddy-ruby-starfish.cyclic.app/chars/${personagem.toLowerCase()}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -32,7 +32,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!!ficha) {
-      fetch(`https://anxious-puce-cloak.cyclic.cloud/reliquias/${ficha.id}`)
+      fetch(`https://giddy-ruby-starfish.cyclic.app/reliquias/${ficha.id}`)
         .then((response) => response.json())
         .then((data) => {
           setReliquias(data);

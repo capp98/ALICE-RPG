@@ -5,7 +5,7 @@ export default function Reliquias({ personagem_id }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://anxious-puce-cloak.cyclic.cloud/reliquias/${personagem_id}`)
+    fetch(`https://giddy-ruby-starfish.cyclic.app/reliquias/${personagem_id}`)
       .then((response) => response.json())
       .then((data) => {
         setReliquias(data);
