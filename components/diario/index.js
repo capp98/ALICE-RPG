@@ -5,7 +5,7 @@ export default function Diario({ personagem_id }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`https://giddy-ruby-starfish.cyclic.app/diario/${personagem_id}`)
+    fetch(`https://alicerpg-api.onrender.com/diario/${personagem_id}`)
       .then((response) => response.json())
       .then((data) => {
         setDiarios(data);
