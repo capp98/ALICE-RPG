@@ -6,7 +6,7 @@ export default function Reliquias() {
   const [urlImagem, setUrlImagem] = useState();
 
   useEffect(() => {
-    fetch(`https://giddy-ruby-starfish.cyclic.app/reliquias`)
+    fetch(`https://alicerpg-api.onrender.com/reliquias`)
       .then((response) => response.json())
       .then((data) => {
         setReliquias(data.filter((reliquia) => !!reliquia.tag));

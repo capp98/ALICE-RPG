@@ -19,7 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     fetch(
-      `https://giddy-ruby-starfish.cyclic.app/chars/${personagem.toLowerCase()}`
+      `https://alicerpg-api.onrender.com/chars/${personagem.toLowerCase()}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -32,7 +32,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!!ficha) {
-      fetch(`https://giddy-ruby-starfish.cyclic.app/reliquias/${ficha.id}`)
+      fetch(`https://alicerpg-api.onrender.com/reliquias/${ficha.id}`)
         .then((response) => response.json())
         .then((data) => {
           setReliquias(data);
